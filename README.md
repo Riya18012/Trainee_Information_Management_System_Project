@@ -8,22 +8,21 @@ tzdata==2023.3
 
 In the Trainee Information Management System project, several entities (database models) are defined to represent different aspects of the system. Here's a list of entities used in the project along with a brief description of each:
 
-TrainingCenter:
-
+# TrainingCenter:
 Attributes:
 id (AutoField): Primary key for the TrainingCenter model.
 name (CharField): Name of the training center.
 location (CharField): Location of the training center.
 contact_email (EmailField): Email contact for the training center.
-Course:
 
+# Course:
 Attributes:
 id (AutoField): Primary key for the Course model.
 name (CharField): Name of the course.
 description (TextField): Description of the course.
 training_center (ForeignKey to TrainingCenter): Relationship with TrainingCenter to associate courses with specific training centers.
-Trainee:
 
+# Trainee:
 Attributes:
 trainee_id (AutoField): Primary key for the Trainee model.
 name (CharField): Name of the trainee.
@@ -34,15 +33,15 @@ phone_num (CharField): Phone number of the trainee.
 address (TextField): Address of the trainee.
 email (EmailField): Email address of the trainee.
 course (ForeignKey to Course, nullable): Relationship with Course to associate trainees with specific courses.
-Trainer:
 
+# Trainer:
 Attributes:
 id (AutoField): Primary key for the Trainer model.
 name (CharField): Name of the trainer.
 specialization (CharField): Specialization or expertise of the trainer.
 designation (CharField, nullable): Designation of the trainer.
-Enrollment:
 
+# Enrollment:
 Attributes:
 id (AutoField): Primary key for the Enrollment model.
 trainee (ForeignKey to Trainee): Relationship with Trainee to associate enrollments with specific trainees.
